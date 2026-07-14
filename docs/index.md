@@ -8,15 +8,15 @@ hide:
 
 <div class="hero-section" markdown>
 
-# :books: Introduction to Data Science
+# :books: BT255CO Introduction to Data Science
 
-**BT255CO · B.Tech Computer Science**
+** B.Tech. in Artificial Intelligence **
 
 <div class="course-meta" markdown>
-<span class="meta-badge">:mortar_board: Dr. Instructor Name</span>
-<span class="meta-badge">:classical_building: Your University Name</span>
+<span class="meta-badge">:mortar_board: Prof. Raj Kumar Thakur</span>
+<span class="meta-badge">:classical_building: Purbanchal University</span>
 <span class="meta-badge">:calendar: Semester III · 2024–25</span>
-<span class="meta-badge">:clock1: 3 Credits</span>
+<span class="meta-badge">:clock1: 3 Credit Hours</span>
 </div>
 
 </div>
