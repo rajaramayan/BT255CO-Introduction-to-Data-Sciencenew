@@ -1,0 +1,58 @@
+# =============================================================================
+#  GitHub Actions — Deploy MkDocs to GitHub Pages
+#
+#  Triggers:   Every push to the `main` branch
+#  Deploys to: gh-pages branch → GitHub Pages
+# =============================================================================
+
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main          # trigger on every push to main
+  workflow_dispatch:  # allow manual trigger from GitHub Actions UI
+
+# ---------------------------------------------------------------------------
+# Permissions required for GitHub Pages deployment
+# ---------------------------------------------------------------------------
+permissions:
+  contents: write     # needed to push to gh-pages branch
+
+# ---------------------------------------------------------------------------
+# Jobs
+# ---------------------------------------------------------------------------
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # ---- 1. Checkout the repository with full history -------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # full history needed for git-revision-date plugin
+
+      # ---- 2. Set up Python -----------------------------------------------
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: "pip"         # cache pip dependencies for faster builds
+
+      # ---- 3. Install dependencies ----------------------------------------
+      - name: Install MkDocs and dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ---- 4. Configure Git identity (required for gh-deploy) -------------
+      - name: Configure Git
+        run: |
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # ---- 5. Build & deploy to GitHub Pages --------------------------------
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --clean --verbose

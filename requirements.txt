@@ -1,0 +1,28 @@
+# =============================================================================
+#  Python dependencies for MkDocs lecture book
+#  Install with:  pip install -r requirements.txt
+# =============================================================================
+
+# Core MkDocs
+mkdocs>=1.6.0
+
+# Material theme — the main theme for the book
+mkdocs-material>=9.5.0
+
+# PyMdown Extensions — code highlighting, math, tabs, details, etc.
+pymdown-extensions>=10.7
+
+# Mermaid diagram support (alternative plugin — optional)
+# mkdocs-mermaid2-plugin>=1.1.1
+
+# Markdown extras
+markdown>=3.5.0
+
+# Optional: auto-generated PDF export
+# mkdocs-with-pdf>=0.9.3
+
+# Optional: multi-language support
+# mkdocs-static-i18n>=1.2.0
+
+# Optional: table of contents sidebar
+# mkdocs-toc-md>=0.1.4

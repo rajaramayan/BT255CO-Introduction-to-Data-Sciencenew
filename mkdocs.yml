@@ -1,0 +1,256 @@
+# =============================================================================
+#  MkDocs Configuration — BT255CO Introduction to Data Science
+#  Course Lecture Book | GitHub Pages Deployment
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Site Information
+# ---------------------------------------------------------------------------
+site_name: "BT255CO · Introduction to Data Science"
+site_description: >
+  Complete lecture notes for BT255CO — Introduction to Data Science.
+  Covers data science fundamentals, data wrangling, exploratory analysis,
+  and machine learning basics.
+site_author: "Dr. Instructor Name"
+site_url: "https://rajaramayan.github.io/BT255CO-Introduction-to-Data-Science/"
+
+# ---------------------------------------------------------------------------
+# Repository
+# ---------------------------------------------------------------------------
+repo_name: "rajaramayan/BT255CO-Introduction-to-Data-Science"
+repo_url: "https://github.com/rajaramayan/BT255CO-Introduction-to-Data-Science"
+edit_uri: "edit/main/docs/"
+
+# ---------------------------------------------------------------------------
+# Theme — Material for MkDocs
+# ---------------------------------------------------------------------------
+theme:
+  name: material
+
+  # ---- Color Palette (Light / Dark toggle) --------------------------------
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep-purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  # ---- Typography ----------------------------------------------------------
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  # ---- Features ------------------------------------------------------------
+  features:
+    # Navigation
+    - navigation.tabs           # top-level tabs
+    - navigation.tabs.sticky    # tabs stay visible while scrolling
+    - navigation.sections       # group nav items under sections
+    - navigation.expand         # expand all sections by default
+    - navigation.path           # breadcrumb navigation
+    - navigation.indexes        # section index pages
+    - navigation.top            # back-to-top button
+
+    # Search
+    - search.suggest            # auto-complete suggestions
+    - search.highlight          # highlight search terms on page
+    - search.share              # shareable search link
+
+    # Content
+    - content.code.copy         # copy button on code blocks
+    - content.code.annotate     # code annotations
+    - content.tabs.link         # link content tabs
+    - content.tooltips          # hover tooltips
+
+    # TOC
+    - toc.follow                # sidebar TOC follows scroll
+
+  # ---- Icons & Logo --------------------------------------------------------
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  # Uncomment and add your logo/favicon to docs/assets/
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+
+# ---------------------------------------------------------------------------
+# Plugins
+# ---------------------------------------------------------------------------
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  # Uncomment if you install mkdocs-mermaid2-plugin (see requirements.txt)
+  # - mermaid2
+
+# ---------------------------------------------------------------------------
+# Markdown Extensions
+# ---------------------------------------------------------------------------
+markdown_extensions:
+  # ---- Standard extensions ------------------------------------------------
+  - abbr                          # abbreviations
+  - admonition                    # note / tip / warning boxes
+  - attr_list                     # add HTML attributes to elements
+  - def_list                      # definition lists
+  - footnotes                     # footnotes [^1]
+  - md_in_html                    # markdown inside HTML blocks
+  - tables                        # pipe tables
+
+  # ---- Table of Contents ---------------------------------------------------
+  - toc:
+      permalink: true             # anchor links on headings
+      title: "On this page"
+
+  # ---- PyMdown Extensions --------------------------------------------------
+  - pymdownx.arithmatex:          # LaTeX math via MathJax
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret                # superscript ^sup^
+  - pymdownx.critic               # CriticMarkup
+  - pymdownx.details              # collapsible <details> blocks
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:           # syntax highlighting
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite         # inline `#!python code` highlighting
+  - pymdownx.keys                 # keyboard keys ++ctrl+c++
+  - pymdownx.mark                 # ==highlighted text==
+  - pymdownx.smartsymbols         # auto typography symbols
+  - pymdownx.snippets:            # include external files
+      auto_append:
+        - assets/abbreviations.md
+  - pymdownx.superfences:         # fenced code blocks + mermaid
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:              # tabbed content blocks
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:            # - [x] checklists
+      custom_checkbox: true
+  - pymdownx.tilde                # subscript ~sub~
+
+# ---------------------------------------------------------------------------
+# Extra JavaScript
+# ---------------------------------------------------------------------------
+extra_javascript:
+  # MathJax configuration (must come before MathJax loader)
+  - assets/extra.js
+  # MathJax v3 CDN
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# ---------------------------------------------------------------------------
+# Extra CSS
+# ---------------------------------------------------------------------------
+extra_css:
+  - assets/extra.css
+
+# ---------------------------------------------------------------------------
+# Extra / Social / Analytics
+# ---------------------------------------------------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/rajaramayan
+      name: GitHub Repository
+    - icon: fontawesome/solid/envelope
+      link: mailto:instructor@university.edu
+      name: Contact Instructor
+  # Google Analytics (replace G-XXXXXXXXXX with your real ID)
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXXXX
+  generator: false          # hide "Made with Material for MkDocs" footer
+
+# ---------------------------------------------------------------------------
+# Navigation
+# ---------------------------------------------------------------------------
+nav:
+  - Home: index.md
+
+  - "Unit 1 · Introduction to Data Science":
+    - Unit1/index.md
+    - "1.1 Definition and Scope": Unit1/1_1.md
+    - "1.2 Applications of Data Science": Unit1/1_2.md
+    - "1.3 Limitations of Data Science": Unit1/1_3.md
+    - "1.4 Types of Data": Unit1/1_4.md
+    - "1.5 Data Science Life-Cycle": Unit1/1_5.md
+    - "1.6 Collection, Cleaning & Preprocessing": Unit1/1_6.md
+    - "1.7 Storage and Retrieval": Unit1/1_7.md
+    - "1.8 Methodologies — CRISP-DM & OSEMN": Unit1/1_8.md
+
+  - "Unit 2 · Data Munging":
+    - Unit2/index.md
+    - "2.1 Data Quality": Unit2/2_1.md
+    - "2.2 Common Issues with Real-World Data": Unit2/2_2.md
+    - "2.3 Cleaning and Standardizing Data": Unit2/2_3.md
+    - "2.4 Data Enrichment": Unit2/2_4.md
+    - "2.5 Data Validation": Unit2/2_5.md
+
+  - "Unit 3 · Statistical Analysis in Python":
+    - Unit3/index.md
+    - "3.1 Hypothesis Testing": Unit3/3_1.md
+    - "3.2 Correlation and Regression Analysis": Unit3/3_2.md
+
+  - "Unit 4 · Descriptive Statistics":
+    - Unit4/index.md
+    - "4.1 Measures of Central Tendency & Dispersion": Unit4/4_1.md
+    - "4.2 Visualization with Matplotlib & Seaborn": Unit4/4_2.md
+
+  - "Unit 5 · Data Visualization":
+    - Unit5/index.md
+    - "5.1 Graphs and Charts": Unit5/5_1.md
+    - "5.2 Interactive Visualization Tools": Unit5/5_2.md
+
+  - "Unit 6 · Machine Learning":
+    - Unit6/index.md
+    - "6.1 Types of Machine Learning": Unit6/6_1.md
+    - "6.2 Supervised vs. Unsupervised Learning": Unit6/6_2.md
+    - "6.2.1 Linear Regression": Unit6/6_2_1.md
+    - "6.2.2 Decision Trees & Random Forests": Unit6/6_2_2.md
+    - "6.2.3 Support Vector Machines": Unit6/6_2_3.md
+    - "6.3.1 Clustering — K-Means & Hierarchical": Unit6/6_3_1.md
+    - "6.3.2 Dimensionality Reduction — PCA": Unit6/6_3_2.md
+
+  - "Unit 7 · Introduction to Big Data":
+    - Unit7/index.md
+    - "7.1 Introduction to Big Data": Unit7/7_1.md
+    - "7.2 History of Big Data": Unit7/7_2.md
+    - "7.3 The Six Vs of Big Data": Unit7/7_3.md
+    - "7.4 Characteristics of Big Data": Unit7/7_4.md
+    - "7.5 Challenges and Future of Big Data": Unit7/7_5.md
+    - "7.6 Practices and Use Cases": Unit7/7_6.md
+    - "7.7 Data Warehouse and Data Lakes": Unit7/7_7.md
+    - "7.8 Big Data Analytics": Unit7/7_8.md
+
+  - "Unit 8 · Data Science Ethics & Privacy":
+    - Unit8/index.md
+    - "8.1 Data Science Ethics": Unit8/8_1.md
+    - "8.2 Principles of Data Ethics": Unit8/8_2.md
+    - "8.3 Privacy Concerns and Regulations": Unit8/8_3.md
+    - "8.4 Benefits of Data Ethics": Unit8/8_4.md
+    - "8.5 Laws Related to Data Protection": Unit8/8_5.md
+    - "8.6 Considerations for Ethics in Data Science": Unit8/8_6.md
+
+  - "Unit 9 · Case Study":
+    - Unit9/index.md
+    - "9.1 Real-Life Data Science — Amazon": Unit9/9_1.md
+
+  - "Appendix":
+    - "Page Template": appendix/template.md
