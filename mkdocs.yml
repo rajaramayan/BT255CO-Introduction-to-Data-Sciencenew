@@ -12,13 +12,13 @@ site_description: >
   Covers data science fundamentals, data wrangling, exploratory analysis,
   and machine learning basics.
 site_author: "Dr. Instructor Name"
-site_url: "https://rajaramayan.github.io/BT255CO-Introduction-to-Data-Science/"
+site_url: "https://rajaramayan.github.io/BT255CO-Introduction-to-Data-Sciencenew/"
 
 # ---------------------------------------------------------------------------
 # Repository
 # ---------------------------------------------------------------------------
-repo_name: "rajaramayan/BT255CO-Introduction-to-Data-Science"
-repo_url: "https://github.com/rajaramayan/BT255CO-Introduction-to-Data-Science"
+repo_name: "rajaramayan/BT255CO-Introduction-to-Data-Sciencenew"
+repo_url: "https://github.com/rajaramayan/BT255CO-Introduction-to-Data-Sciencenew"
 edit_uri: "edit/main/docs/"
 
 # ---------------------------------------------------------------------------
