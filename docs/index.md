@@ -285,10 +285,10 @@ $$
 
 | | |
 |---|---|
-| **Instructor** | Dr. Instructor Name |
-| **Email** | instructor@university.edu |
-| **Office Hours** | Monday & Wednesday, 3–5 PM |
-| **Classroom** | Room 204, CS Building |
+| **Instructor** | Prof. Raj Kumar Thakur |
+| **Email** | rajkshiva1@gmail.com |
+| **Office** | Purbanchal University School of Science and Technology |
+| **Address** | Biratnagar, Nepal |
 
 ---
 
