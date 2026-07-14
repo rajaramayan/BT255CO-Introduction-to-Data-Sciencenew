@@ -1,0 +1,200 @@
+/* =============================================================================
+   extra.css — Custom styles for BT255CO Lecture Book
+   Applied on top of the Material for MkDocs theme
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Root variables — easy theming overrides
+   --------------------------------------------------------------------------- */
+:root {
+  --md-primary-fg-color:         #3f51b5;   /* indigo */
+  --md-primary-fg-color--light:  #5c6bc0;
+  --md-primary-fg-color--dark:   #283593;
+  --md-accent-fg-color:          #7c4dff;   /* deep purple accent */
+}
+
+/* ---------------------------------------------------------------------------
+   Home page hero section
+   --------------------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, #3f51b5 0%, #7c4dff 50%, #283593 100%);
+  color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(63, 81, 181, 0.3);
+}
+
+.hero-section h1 {
+  color: #ffffff !important;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  border-bottom: none !important;
+}
+
+.hero-section .course-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.hero-section .course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hero-section .meta-badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------------------------------------------------------------------------
+   Info cards grid (used on home page)
+   --------------------------------------------------------------------------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.info-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  padding: 1.4rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.info-card:hover {
+  box-shadow: 0 6px 20px rgba(63, 81, 181, 0.18);
+  transform: translateY(-2px);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: var(--md-primary-fg-color);
+  font-size: 1.05rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Unit cards on unit overview pages
+   --------------------------------------------------------------------------- */
+.unit-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.topic-card {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background: var(--md-code-bg-color);
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1.2rem;
+  transition: border-left-color 0.2s;
+}
+
+.topic-card:hover {
+  border-left-color: var(--md-accent-fg-color);
+}
+
+.topic-card a {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Admonition customisation
+   --------------------------------------------------------------------------- */
+/* "Definition" custom admonition */
+.md-typeset .admonition.definition,
+.md-typeset details.definition {
+  border-left-color: #0097a7;
+}
+.md-typeset .definition > .admonition-title,
+.md-typeset .definition > summary {
+  background-color: rgba(0, 151, 167, 0.12);
+}
+.md-typeset .definition > .admonition-title::before,
+.md-typeset .definition > summary::before {
+  background-color: #0097a7;
+  -webkit-mask-image: var(--md-admonition-icon--note);
+          mask-image: var(--md-admonition-icon--note);
+}
+
+/* ---------------------------------------------------------------------------
+   Code block enhancements
+   --------------------------------------------------------------------------- */
+.md-typeset .highlight pre {
+  border-radius: 8px;
+}
+
+/* Output block styling */
+.output-block pre {
+  background: #1a1a2e !important;
+  color: #e0e0e0 !important;
+  border-left: 4px solid #4caf50;
+  border-radius: 8px;
+}
+
+/* ---------------------------------------------------------------------------
+   Mathematical equations
+   --------------------------------------------------------------------------- */
+.arithmatex {
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Table styling
+   --------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   Section separators
+   --------------------------------------------------------------------------- */
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--md-primary-fg-color--light);
+  margin: 2rem 0;
+  opacity: 0.4;
+}
+
+/* ---------------------------------------------------------------------------
+   Print styles
+   --------------------------------------------------------------------------- */
+@media print {
+  .md-header, .md-nav, .md-footer, .md-search { display: none !important; }
+  .md-main__inner { margin: 0; }
+  .md-content { max-width: 100%; }
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive tweaks
+   --------------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .hero-section h1  { font-size: 1.8rem; }
+  .cards-grid       { grid-template-columns: 1fr; }
+  .unit-overview    { grid-template-columns: 1fr; }
+}
