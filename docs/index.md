@@ -25,7 +25,7 @@ hide:
 
 ## Welcome :wave:
 
-These are the **official lecture notes** for *BT255CO — Introduction to Data Science*.  
+These are the ** lecture notes** for *BT255CO — Introduction to Data Science*.  
 All theory, examples, programs, and exercises are organized unit-wise and accessible from the left navigation panel.
 
 !!! tip "How to use this book"
